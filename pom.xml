@@ -60,6 +60,15 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <addResources>true</addResources>
+          <executable>true</executable>
+          <fork>false</fork>
+          <!-- Enable the line below to have remote debugging of your application on port 5005 --> <jvmArguments>-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005</jvmArguments>
+          <arguments>
+            <argument>spring.profiles.active=dev</argument>
+          </arguments>
+        </configuration>
         <executions>
           <execution>
             <id>pre integration test</id>
